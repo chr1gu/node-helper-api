@@ -4,11 +4,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-var routes = require('./routes/index');
-var users = require('./routes/users');
-var pdf = require('./routes/pdf');
-
 var app = express();
 
 // view engine setup
@@ -26,7 +21,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // routes
 //app.use('/', routes);
 //app.use('/users', users);
-app.use('/pdf', pdf);
+app.use('/dropbox', require('./routes/dropbox'));
+app.use('/pdf', require('./routes/pdf'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

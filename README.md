@@ -10,6 +10,8 @@
 
 `DEBUG=express:* node ./bin/www`
 
+NOTE: doesn't work with fish-shell.
+
 ## Run on server
 
 ### Using forever
